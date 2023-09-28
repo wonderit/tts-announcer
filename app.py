@@ -7,18 +7,6 @@ from models import SynthesizerTrn
 from text.symbols import symbols
 from text import text_to_sequence
 
-import sys
-from subprocess import call
-
-def run_cmd(command):
-    try:
-        print(command)
-        call(command, shell=True)
-    except KeyboardInterrupt:
-        print("Process interrupted")
-        sys.exit(1)
-run_cmd("apt-get install espeak -y")
-
 MODEL_PATH_KO = './models/elevenlabs_ko'
 MODEL_PATH_EN = './models/elevenlabs_en'
 hps = None
