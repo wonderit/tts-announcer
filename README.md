@@ -24,8 +24,8 @@ cd ..
 PHONEMIZER_ESPEAK_LIBRARY=C:\Program Files\eSpeak NG\libespeak-ng.dll
 ```
 - setup github repo and huggingface space together
-  ```
-  git remote add space https://huggingface.co/spaces/wonderit-safeai/tts-mintalk
-  git push --force space main
-  ```
+```
+git remote add space https://huggingface.co/spaces/wonderit-safeai/tts-mintalk
+git push --force space main
+```
 
