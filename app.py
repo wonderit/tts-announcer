@@ -7,18 +7,18 @@ from models import SynthesizerTrn
 from text.symbols import symbols
 from text import text_to_sequence
 
-MODEL_PATH_KO = './models/elevenlabs_ko'
-MODEL_PATH_EN = './models/elevenlabs_en'
+model_path_1 = 'models/dex'
+model_path_2 = 'models/pej'
 hps = None
     
-st.set_page_config(page_title="TTS English / Korean Announcer 🏞️",
-                  page_icon="🖼️",
+st.set_page_config(page_title="TTS Mintalk 👄",
+                  page_icon="📢",
                   initial_sidebar_state="expanded")
 
-st.title("TTS English / Korean Announcer 📸")
+st.title("TTS Mintalk Artists 📢")
 
-options = ["Antoni", "Bella"]
-options_ko = ["안토니", "벨라"]
+options = ["Dex", "Pyo"]
+options_ko = ["덱스", "표은지"]
 options2 = ["ko", "en"]
 
 
@@ -29,15 +29,14 @@ def get_text(text, hps):
     text_norm = torch.LongTensor(text_norm)
     return text_norm
 
-def generate_voice(text, speaker, lang):
-    print(lang)
-    if lang == 'ko':
-        dir_path = MODEL_PATH_KO
-    else:
-        dir_path = MODEL_PATH_EN
+def generate_voice(text, speaker):
     speaker_idx = options.index(speaker)
 
-    print(dir_path)
+    if speaker_idx == 0:
+        dir_path = model_path_1
+    else:
+        dir_path = model_path_2
+
     hps = utils.get_hparams_from_file(f"{dir_path}/config.json")
 
     net_g = SynthesizerTrn(
@@ -62,24 +61,14 @@ def generate_voice(text, speaker, lang):
 
 with open("design.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-speaker_box = st.selectbox("Select Announcer",
+speaker_box = st.selectbox("Select Artists",
                            options=options, index=1)
 
-language_box = st.selectbox("Select Language",
-                            options=options2, index=1)
+speaker_name = options_ko[options.index(speaker_box)]
 
-if language_box == 'ko':
-    speaker_name = options_ko[options.index(speaker_box)]
-else:
-    speaker_name = speaker_box
+st.subheader(f"아티스트 : {speaker_name} 님")
 
-st.subheader(f"{speaker_name} 아나운서")
-# st.text(speaker_name)
-
-if language_box == 'ko':
-    text = st.text_input("지문을 입력하세요.", f"안녕하세요, 저는 {speaker_name} 입니다.")
-else:
-    text = st.text_input("지문을 입력하세요.", f"Hello, My name is {speaker_name}. ")
+text = st.text_input("지문을 입력하세요.", f"안녕하세요, 저는 {speaker_name} 입니다.")
 
 if st.button('Generate Voice'):
-    generate_voice(text, speaker_box, language_box)
+    generate_voice(text, speaker_box)

@@ -1,6 +1,6 @@
 ---
-title: TTS-Announcer
-emoji: 💻
+title: TTS-Mintalk
+emoji: 📢
 colorFrom: purple
 colorTo: gray
 sdk: streamlit
@@ -12,6 +12,7 @@ pinned: true
 
 
 ### Setting
+- python 3.11
 
 - Build monotonic alignment search
 ```sh

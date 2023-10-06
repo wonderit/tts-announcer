@@ -1,2 +1,2 @@
-models/elevenlabs_en/G.pth filter=lfs diff=lfs merge=lfs -text
-models/elevenlabs_ko/G.pth filter=lfs diff=lfs merge=lfs -text
+models/dex/G.pth filter=lfs diff=lfs merge=lfs -text
+models/pej/G.pth filter=lfs diff=lfs merge=lfs -text

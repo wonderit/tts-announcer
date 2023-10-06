@@ -15,16 +15,16 @@ _letters = 'AEINOQUabdefghijkmnoprstuvwyzʃʧʦ↓↑ '
 '''
 
 # # korean_cleaners
-# _pad        = '_'
-# _punctuation = ',.!?…~'
-# _letters = 'ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㄲㄸㅃㅆㅉㅏㅓㅗㅜㅡㅣㅐㅔ '
+_pad        = '_'
+_punctuation = ',.!?…~'
+_letters = 'ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㄲㄸㅃㅆㅉㅏㅓㅗㅜㅡㅣㅐㅔ '
 
 # korean english cleaners
-_pad        = '_'
-_kor_letters = 'ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㄲㄸㅃㅆㅉㅏㅓㅗㅜㅡㅣㅐㅔ '
-_punctuation = ';:,.!?¡¿—…~"«»“” '
-_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-_letters_ipa = "ɑɐɒæɓʙβɔɕçɗɖðʤəɘɚɛɜɝɞɟʄɡɠɢʛɦɧħɥʜɨɪʝɭɬɫɮʟɱɯɰŋɳɲɴøɵɸθœɶʘɹɺɾɻʀʁɽʂʃʈʧʉʊʋⱱʌɣɤʍχʎʏʑʐʒʔʡʕʢǀǁǂǃˈˌːˑʼʴʰʱʲʷˠˤ˞↓↑→↗↘'̩'ᵻ"
+# _pad        = '_'
+# _kor_letters = 'ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㄲㄸㅃㅆㅉㅏㅓㅗㅜㅡㅣㅐㅔ '
+# _punctuation = ';:,.!?¡¿—…~"«»“” '
+# _letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+# _letters_ipa = "ɑɐɒæɓʙβɔɕçɗɖðʤəɘɚɛɜɝɞɟʄɡɠɢʛɦɧħɥʜɨɪʝɭɬɫɮʟɱɯɰŋɳɲɴøɵɸθœɶʘɹɺɾɻʀʁɽʂʃʈʧʉʊʋⱱʌɣɤʍχʎʏʑʐʒʔʡʕʢǀǁǂǃˈˌːˑʼʴʰʱʲʷˠˤ˞↓↑→↗↘'̩'ᵻ"
 
 '''# chinese_cleaners
 _pad        = '_'
@@ -75,7 +75,7 @@ _letters = '#Nabdefghijklmnoprstuvwxyzæçøŋœȵɐɑɒɓɔɕɗɘəɚɛɜɣɤɦ
 '''
 
 # Export all symbols:
-# symbols = [_pad] + list(_punctuation) + list(_letters)
-symbols = [_pad] + list(_punctuation) + list(_letters) + list(_letters_ipa) + list(_kor_letters)
+symbols = [_pad] + list(_punctuation) + list(_letters)
+# symbols = [_pad] + list(_punctuation) + list(_letters) + list(_letters_ipa) + list(_kor_letters)
 # Special symbol ids
 SPACE_ID = symbols.index(" ")
