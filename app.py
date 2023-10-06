@@ -31,16 +31,17 @@ def get_text(text, hps):
 
 def generate_voice(text, speaker):
     speaker_idx = options.index(speaker)
-
+    symbol_lenth = 35
     if speaker_idx == 0:
         dir_path = model_path_1
     else:
+        symbol_lenth = 207
         dir_path = model_path_2
 
     hps = utils.get_hparams_from_file(f"{dir_path}/config.json")
 
     net_g = SynthesizerTrn(
-        len(symbols),
+        symbol_lenth,
         hps.data.filter_length // 2 + 1,
         hps.train.segment_size // hps.data.hop_length,
         n_speakers=hps.data.n_speakers,
